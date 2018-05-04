@@ -17,7 +17,7 @@
           "help": {
             "online": "https://github.com/nekuneko/arduino-board-index"
           },
-          "url": "http://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip",
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip",
           "archiveFileName": "nekuneko-samd-1.0.0.zip",
           "checksum": "SHA-256:831931A863B2489E4A333AAEF4CFD29768EB3D9C16B50C9DFB9EB7FEA00B7400",
           "size": "1306624",
