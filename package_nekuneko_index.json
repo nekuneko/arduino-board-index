@@ -51,6 +51,49 @@
               "version": "1.2.0"
             }
           ]
+        },
+        {
+          "name": "NekuNeko SAMD Boards",
+          "architecture": "samd",
+          "version": "0.0.1",
+          "category": "Neku",
+          "help": {
+            "online": "https://github.com/nekuneko/arduino-board-index"
+          },
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip",
+          "archiveFileName": "nekuneko-samd-1.0.0.zip",
+          "checksum": "SHA-256:831931A863B2489E4A333AAEF4CFD29768EB3D9C16B50C9DFB9EB7FEA00B7400",
+          "size": "1306624",
+          "boards": [
+            {"name": "Stimey SAMD21G18A"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "4.8.3-2014q1"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.8.0-48-gb176eee"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.9.0-arduino"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS",
+              "version": "4.5.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.0"
+            }
+          ]
         }   
       ],
       "tools":[]
