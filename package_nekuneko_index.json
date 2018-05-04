@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "Gontak Sok Inc.",
+      "name": "nekuneko",
       "maintainer": "NekuNeko",
       "websiteURL": "https://github.com/nekuneko",
       "email": "jvramallo@gmail.com",
@@ -13,7 +13,7 @@
           "name": "NekuNeko SAMD Boards",
           "architecture": "samd",
           "version": "0.1",
-          "category": "NekuNeko",
+          "category": "Neku",
           "help": {
             "online": "https://github.com/nekuneko/arduino-board-index"
           },
