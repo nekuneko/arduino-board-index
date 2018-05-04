@@ -10,11 +10,11 @@
         {
           "name": "NekuNeko SAMD Boards",
           "architecture": "samd",
-          "version": "0.1",
+          "version": "0.2",
           "category": "NekuNeko",
           "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-0.1.zip",
           "checksum": "SHA-256:92035DE4C35F118874DF55026BAF4EE5FF8E9285969D73ACA974C5AF2E7DD08A",
-          "version": "0.1",
+          "version": "0.2",
           "architecture": "samd",
           "archiveFileName": "nekuneko-samd-0.1.zip",
           "help": {
