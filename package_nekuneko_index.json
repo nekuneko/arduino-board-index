@@ -19,8 +19,8 @@
           },
           "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-0.1.zip",
           "archiveFileName": "nekuneko-samd-0.1.zip",
-          "checksum": "SHA-256:92035DE4C35F118874DF55026BAF4EE5FF8E9285969D73ACA974C5AF2E7DD08A",
-          "size": "1292579",
+          "checksum": "SHA-256:69DACB81F2C75E5ED834FDFC60B1AEAC6948AA17EE3A3B3DDADCA7A7B39D7B36",
+          "size": "1304679",
           "boards": [
             {"name": "Stimey SAMD21G18A"}
           ],
