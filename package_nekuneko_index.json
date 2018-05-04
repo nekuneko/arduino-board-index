@@ -1,29 +1,28 @@
 {
   "packages": [
     {
+      "name": "Gontak Sok Inc.",
       "maintainer": "NekuNeko",
-      "help": {
-        "online": "https://github.com/nekuneko"
-      },
       "websiteURL": "https://github.com/nekuneko",
+      "email": "jvramallo@gmail.com",
+      "help": {
+        "online": "https://github.com/nekuneko/arduino-board-index"
+      },
       "platforms": [
         {
           "name": "NekuNeko SAMD Boards",
           "architecture": "samd",
-          "version": "0.2",
+          "version": "0.1",
           "category": "NekuNeko",
-          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-0.1.zip",
-          "checksum": "SHA-256:92035DE4C35F118874DF55026BAF4EE5FF8E9285969D73ACA974C5AF2E7DD08A",
-          "version": "0.2",
-          "architecture": "samd",
-          "archiveFileName": "nekuneko-samd-0.1.zip",
           "help": {
-            "online": "https://github.com/nekuneko"
+            "online": "https://github.com/nekuneko/arduino-board-index"
           },
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-0.1.zip",
+          "archiveFileName": "nekuneko-samd-0.1.zip",
+          "checksum": "SHA-256:92035DE4C35F118874DF55026BAF4EE5FF8E9285969D73ACA974C5AF2E7DD08A",
+          "size": "1292579",
           "boards": [
-            {
-              "name": "Stimey SAMD21G18A"
-            }
+            {"name": "Stimey SAMD21G18A"}
           ],
           "toolsDependencies": [
             {
@@ -53,7 +52,8 @@
             }
           ]
         }   
-      ]
+      ],
+      "tools":[]
     }
   ]
 }
