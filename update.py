@@ -193,10 +193,12 @@ def main ():
 	json_file.close()
 
 
-	os.system('git add .')
-	os.system('git commit')
-	os.system('git push')
-
+	# Subir nuevos ficheros a git
+	try:
+		os.system('git commit -a')
+		os.system('git push')
+	except:
+		print('ERROR: Git no instalado')
 
 # 
 main()
