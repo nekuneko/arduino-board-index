@@ -1,16 +1,16 @@
-from setuptools import setup, find_packages
-setup(name='updateBoards',
-      version='1.0.0',
-      description='Programa que actualiza las placas de arduino generando automáticamente el .json',
-      url='https://github.com/nekuneko',
-      author='NekuNeko',
-      author_email='jvramallo@gmail.com',
-      license='GNU',
-      packages=find_packages(),
-      install_requires=[
- #         'gitpython',
-      ],
-      zip_safe=False)
+#from setuptools import setup, find_packages
+# setup(name='updateBoards',
+#       version='1.0.0',
+#       description='Programa que actualiza las placas de arduino generando automáticamente el .json',
+#       url='https://github.com/nekuneko',
+#       author='NekuNeko',
+#       author_email='jvramallo@gmail.com',
+#       license='GNU',
+#       packages=find_packages(),
+#       install_requires=[
+#           'gitpython',
+#       ],
+#       zip_safe=False)
 
 import os
 import sys
@@ -21,9 +21,9 @@ from copy import deepcopy
 #from git import *
 
 
-nombrePlataforma: 	str = 'nekuneko-samd'
-githubBaseURL:	 	str = 'https://nekuneko.github.io/arduino-board-index/'
-nombrePackageJson:	str = 'package_nekuneko_index.json'
+nombrePlataforma = 'nekuneko-samd'
+githubBaseURL= 'https://nekuneko.github.io/arduino-board-index/'
+nombrePackageJson = 'package_nekuneko_index.json'
 
 
 # To Do:
@@ -114,15 +114,15 @@ def incrementVersion(version: str='0.0.0', campo: str='release'):
 ## START MAIN ###
 def main ():
 	# Variables usadas
-	hasher:				hashlib.sha256
-	lastVersion:  		str  	= "0.0.0"
-	lastPlatform: 		dict 	= {}
-	statinfo:			os.stat_result 	# clase con atributos: st_mode, st_ino, st_dev, st_nlink, st_uid, is_gid, st_size, st_atime, st_mtime, st_ctime
-	version:			str 	= "0.0.0"
-	archiveFileName:	str 	= "nekuneko-samd-1.0.0.tar.bz2"
-	checksum:			str 	= "SHA-256: abcde"
-	size:				int 	= 0
-	url:				str 	= "https://"
+	# hasher:			hashlib.sha256
+	# lastVersion:  	str  	= "0.0.0"
+	# lastPlatform: 	dict 	= {}
+	# statinfo:			os.stat_result 	# clase con atributos: st_mode, st_ino, st_dev, st_nlink, st_uid, is_gid, st_size, st_atime, st_mtime, st_ctime
+	# version:			str 	= "0.0.0"
+	# archiveFileName:	str 	= "nekuneko-samd-1.0.0.tar.bz2"
+	# checksum:			str 	= "SHA-256: abcde"
+	# size:				int 	= 0
+	# url:				str 	= "https://"
 
 
 	# Comprobar que exista el directorio ../NekuNeko_Arduino_Boards
@@ -135,7 +135,7 @@ def main ():
 		
 
 	# Cargar json en python
-	with open (nombrePackageJson, 'r') as json_file:
+	with open (nombrePackageJson, 'r+') as json_file:
 		dic_jsonArduino = json.load(json_file)
 	json_file.close()
 
@@ -155,7 +155,7 @@ def main ():
 	version = incrementVersion(lastVersion, 'release')
 
 	# Determinar el nuevo nombre de archivo: nekuneko-samd - 1.2.0
-	nombrePlataformaVersion: str  = nombrePlataforma + '-' + version
+	nombrePlataformaVersion = nombrePlataforma + '-' + version
 	archiveFileName = nombrePlataformaVersion + '.tar.bz2'
 
 	# Comprimir el archivo de las placas
@@ -191,14 +191,14 @@ def main ():
 
 	# Actualizar json
 	with open (nombrePackageJson, 'w') as json_file:
-		json_file.dumps(dic_jsonArduino)
+		json.dump(dic_jsonArduino, json_file)
 	json_file.close()
 
-	
 
 
 
 
 
-# Calcular hash del fichero
+# 
+main()
 
