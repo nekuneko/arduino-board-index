@@ -18,8 +18,6 @@ import json
 import hashlib
 import tarfile
 from copy import deepcopy
-#from git import *
-
 
 nombrePlataforma = 'nekuneko-samd'
 githubBaseURL= 'https://nekuneko.github.io/arduino-board-index/'
@@ -195,8 +193,9 @@ def main ():
 	json_file.close()
 
 
-
-
+	os.system('git add .')
+	os.system('git commit')
+	os.system('git push')
 
 
 # 
