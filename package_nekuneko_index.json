@@ -2,8 +2,8 @@
   "packages": [
     {
       "name": "nekuneko",
-      "maintainer": "Neku",
       "websiteURL": "https://github.com/nekuneko",
+      "maintainer": "Neku",
       "email": "jvramallo@gmail.com",
       "help": {
         "online": "https://github.com/nekuneko/arduino-board-index"
@@ -12,15 +12,15 @@
         {
           "name": "NekuNeko SAMD Boards",
           "architecture": "samd",
+          "category": "Contributed",
           "version": "1.0.0",
-          "category": "Neku",
-          "help": {
-            "online": "https://github.com/nekuneko/arduino-board-index"
-          },
-          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip",
           "archiveFileName": "nekuneko-samd-1.0.0.zip",
-          "checksum": "SHA-256:C78532D78360C9889E79BCEE6212DE7AA53F9FA12958FE20A330B086EB12E49E",
-          "size": "1363968",
+          "checksum": "SHA-256:c78532d78360c9889e79bcee6212de7aa53f9fa12958fe20a330b086eb12e49e",
+          "size": "1363431",
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip",
+          "help": {
+            "online": "https://github.com/nekuneko/NekuNeko_Arduino_Boards'"
+          },
           "boards": [
             {"name": "Stimey SAMD21G18A"}
           ],

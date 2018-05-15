@@ -68,41 +68,41 @@ def incrementVersion(version: str='0.0.0', campo: str='release'):
 
 # package_nekuneko_index.json
 # dic_jsonArduino = {
-# 	'packages': [ 										# Lista de paquetes, generalmente solo hay uno.
+# 	'packages': [ 									# Lista de paquetes, generalmente solo hay uno.
 # 		dic_package
 # 	]
 # }
 
 # dic_package = {
-# 	'name' : 		'nekuneko', 						# Nombre paquete = nombre de la empresa
-# 	'websiteURL': 	'https://github.com/nekuneko',		# Web de la empresa
-# 	'maintainer':	'Neku', 							# Nombre del mantenedor
-#  		'email': 		'jvramallo@gmail.com', 			# Email del mantenedor
-#  		'help':	{ 										# Ayuda online
-#  			'online':	'https://github.com/nekuneko/arduino-board-index' # Wiki del paquete
-#  		},
-#  		'platforms': [ 									# Lista de plataformas, pueden ser distintas arquitecturas (Placas AVR, Placas SAMD, etc.) o incrementos de versiones de una arquitectura determinada
-#  			dic_platform
-#  		]
+# 	'name' : 		'nekuneko', 					# Nombre paquete = nombre de la empresa
+# 	'maintainer':	'Neku', 						# Nombre del mantenedor
+# 	'websiteURL': 	'https://github.com/nekuneko',	# Web de la empresa
+#  	'email': 		'jvramallo@gmail.com', 			# Email del mantenedor
+#  	'help':	{ 										# Ayuda online
+#  		'online':	'https://github.com/nekuneko/arduino-board-index' # Wiki del paquete
+#  	},
+#  	'platforms': [ 									# Lista de plataformas, pueden ser distintas arquitecturas (Placas AVR, Placas SAMD, etc.) o incrementos de versiones de una arquitectura determinada
+#  		dic_platform
+#  	]
 # }
 
 # dic_platform = {
-# 	'name': 'NekuNeko SAMD Boards', 					# Nombre del conjunto de placas
-#  	'architecture': 'samd', 							# Arquitectura
-#  	'archiveFileName': 'nekuneko-samd-1.0.0.zip', 		# Nombre del fichero que contiene una carpeta nombreFichero-version 
-#  	'checksum': 'SHA-256:C78532D78360C9889E79BCEE6212DE7AA53F9FA12958FE20A330B086EB12E49E',  	# Hash Sha256 del fichero
-#  	'size': '1363968', 									# Tamaño en bytes del fichero
-#  	'url': 'https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip', 	# Localización del fichero
+# 	'name': 'NekuNeko SAMD Boards', 				# Nombre del conjunto de placas
+#  	'architecture': 'samd', 						# Arquitectura
+#  	'category': 'Contributed', 						# Este campo está reservado, un core de terceros tiene que ponerlo a Contributed
 #  	'version': '1.0.0',
-#  	'category': 'Contributed', 							# Este campo está reservado, un core de terceros tiene que ponerlo a Contributed
-#  	'help': { 											# Ayuda online
-# 		'online': 'https://github.com/nekuneko/NekuNeko_Arduino_Boards' 	# Wiki de la plataforma
+#  	'archiveFileName': 'nekuneko-samd-1.0.0.zip', 	# Nombre del fichero que contiene una carpeta nombreFichero-version 
+#  	'checksum': 'SHA-256:C78532D78360C9889E79BCEE6212DE7AA53F9FA12958FE20A330B086EB12E49E',  	# Hash Sha256 del fichero
+#  	'size': '1363968', 								# Tamaño en bytes del fichero
+#  	'url': 'https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.0.0.zip', 	# Localización del fichero
+#  	'help': { 										# Ayuda online
+# 		'online': 'https://github.com/nekuneko/NekuNeko_Arduino_Boards' # Wiki de la plataforma
 # 	},
 
-#  	'boards': [ 										# Lista de placas incluidas en el paquete
+#  	'boards': [ 									# Lista de placas incluidas en el paquete
 # 		{'name': 'Stimey SAMD21G18A'},
 # 	],
-#  	'toolsDependencies': [ 								# Herramientas necesarias para compilación
+#  	'toolsDependencies': [ 							# Herramientas necesarias para compilación
 #  		{'packager': 'arduino', 'name': 'arm-none-eabi-gcc', 'version': '4.8.3-2014q1'},
 #   	{'packager': 'arduino', 'name': 'bossac', 			 'version': '1.8.0-48-gb176eee'},
 #   	{'packager': 'arduino', 'name': 'openocd', 			 'version': '0.9.0-arduino'},
@@ -114,7 +114,7 @@ def incrementVersion(version: str='0.0.0', campo: str='release'):
 ## START MAIN ###
 def main ():
 	# Variables usadas
-	hasher:				hashlib.sha256 = hashlib.sha256()
+	hasher:				hashlib.sha256
 	lastVersion:  		str  	= "0.0.0"
 	lastPlatform: 		dict 	= {}
 	statinfo:			os.stat_result 	# clase con atributos: st_mode, st_ino, st_dev, st_nlink, st_uid, is_gid, st_size, st_atime, st_mtime, st_ctime
@@ -164,6 +164,7 @@ def main ():
 	print('Hecho')
 
 	# Calcular hash sha256 del archivo
+	hasher = hashlib.sha256()
 	with open (archiveFileName, 'rb') as zip_file:
 		buf = zip_file.read()
 		hasher.update(buf)
