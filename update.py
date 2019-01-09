@@ -42,16 +42,19 @@ def make_tarfile(str_nombreArchivoComprimido: str, str_directorio: str):
 	# Increment <major> for non-backwards compatible changes
 	# Increment <minor> for new features
 	# Increment <revision> for bug fixes.
-def incrementVersion(version: str='0.0.0', campo: str='release'):
-	campo 		 = str(campo).lower()
+def incrementVersion(version: str='0.0.0', release: str='release'):
+	release 	 = str(release).lower()
 	version 	 = str(version)
 	list_version = version.split('.') # list = ['0', '0', '0']
 
-	if (campo == 'major'):
+	if (release == 'major'):
 		list_version[0] = str(int(list_version[0]) + 1)
-	elif (campo == 'minor'):
+		list_version[1] = '0'
+		list_version[2] = '0'
+	elif (release == 'minor'):
 		list_version[1] = str(int(list_version[1]) + 1)
-	elif (campo == 'release'):
+		list_version[2] = '0'
+	elif (release == 'release'):
 		list_version[2] = str(int(list_version[2]) + 1)
 	else:
 		pass
@@ -122,6 +125,20 @@ def main ():
 	# size:				int 	= 0
 	# url:				str 	= "https://"
 
+	str_release = 'release'
+
+	print(len(sys.argv))
+
+	# Comprobar argumentos:
+	if (len(sys.argv) > 1):
+		if (sys.argv[1] not in ["major", "minor", "release"]):
+			print("Primer argumento no válido, debe ser: major, minor, release. Para incrementar x.y.z respectivamente")
+			exit(1)
+		else:
+			str_release = str(sys.argv[1])
+
+	print("Actualizando versión como: " + str_release)
+	#input()
 
 	# Comprobar que exista el directorio ../NekuNeko_Arduino_Boards
 	if (not os.path.isdir('../NekuNeko_Arduino_Boards')):
@@ -150,7 +167,8 @@ def main ():
 
 
 	# Incrementar la versión según sea <major>, <minor> o <release>, 1.0.0 to 1.0.1
-	version = incrementVersion(lastVersion, 'release')
+	version = incrementVersion(lastVersion, str_release)
+	print("La nueva versión será: " + str(version))
 
 	# Determinar el nuevo nombre de archivo: nekuneko-samd - 1.2.0
 	nombrePlataformaVersion = nombrePlataforma + '-' + version
@@ -162,12 +180,14 @@ def main ():
 	print('Hecho')
 
 	# Calcular hash sha256 del archivo
+	print("Calculando hash al archivo boards...")
 	hasher = hashlib.sha256()
 	with open (archiveFileName, 'rb') as zip_file:
 		buf = zip_file.read()
 		hasher.update(buf)
 		checksum = hasher.hexdigest()
 	zip_file.close()
+	print("Hash: " + checksum)
 
 
 	# Calcular tamaño en disco del archivo
@@ -188,17 +208,20 @@ def main ():
 	dic_jsonArduino['packages'][0]['platforms'].append(lastPlatform) 
 
 	# Actualizar json
+	print("Actualizando json...")
 	with open (nombrePackageJson, 'w') as json_file:
 		json.dump(dic_jsonArduino, json_file)
 	json_file.close()
+	print("JSON actualizado")
 
 
 	# Subir nuevos ficheros a git
-	try:
-		os.system('git commit -a')
-		os.system('git push')
-	except:
-		print('ERROR: Git no instalado')
+	#print("Subiendo ficheros a git...")
+	#try:
+	#	os.system('git commit -a')
+	#	os.system('git push')
+	#except:
+	#	print('ERROR: Git no instalado')
 
 # 
 main()
