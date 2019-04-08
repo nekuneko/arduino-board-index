@@ -37,7 +37,7 @@ def make_tarfile(str_nombreArchivoComprimido: str, str_directorio: str):
         tar.close()
 
 
-# Funcion para incrementar la versión de una release
+# This function increments the release version number
 # Versioning: <major>.<minor>.<release> ->> 1.6.4
 	# Increment <major> for non-backwards compatible changes
 	# Increment <minor> for new features
@@ -65,7 +65,7 @@ def incrementVersion(version: str='0.0.0', release: str='release'):
 
 
 
-# Fichero json a cargar:
+# json file example to load
 
 # package_nekuneko_index.json
 # dic_jsonArduino = {
@@ -137,7 +137,7 @@ def main ():
 		else:
 			str_release = str(sys.argv[1])
 
-	print("Actualizando versión como: " + str_release)
+	print("Tipo de actualización: " + str_release)
 	#input()
 
 	# Comprobar que exista el directorio ../NekuNeko_Arduino_Boards
@@ -169,6 +169,11 @@ def main ():
 	# Incrementar la versión según sea <major>, <minor> o <release>, 1.0.0 to 1.0.1
 	version = incrementVersion(lastVersion, str_release)
 	print("La nueva versión será: " + str(version))
+
+	# Update version field in platform.txt file, static
+	lines = open('../NekuNeko_Arduino_Boards/platform.txt').read().splitlines()
+	lines[22] = 'version='+str(version)
+	open('../NekuNeko_Arduino_Boards/platform.txt','w').write('\n'.join(lines))
 
 	# Determinar el nuevo nombre de archivo: nekuneko-samd - 1.2.0
 	nombrePlataformaVersion = nombrePlataforma + '-' + version
