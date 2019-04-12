@@ -1,8 +1,14 @@
 {
   "packages": [
     {
-      "maintainer": "Neku",
+      "websiteURL": "https://github.com/nekuneko",
       "tools": [],
+      "name": "nekuneko",
+      "email": "",
+      "help": {
+        "online": "https://github.com/nekuneko/arduino-board-index"
+      },
+      "maintainer": "Neku",
       "platforms": [
         {
           "boards": [
@@ -331,10 +337,10 @@
               "name": "SoK Zero (SAMD21J18A) [Deprecated]"
             },
             {
-            	"name": "SoK Zero Dawn (SAMD21J18A)"
+              "name": "SoK Zero Dawn (SAMD21J18A)"
             },
             {
-            	"name": "SoK Dark Dawn (SAMD51J20A)"
+              "name": "SoK Dark Dawn (SAMD51J20A)"
             }
           ],
           "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.2.0.tar.bz2",
@@ -375,13 +381,59 @@
           },
           "category": "Contributed",
           "checksum": "SHA-256:cfe12b379673fed350f0333ec5e3fe69620ccd47b6ba19d6b7b982449276d028"
+        },
+        {
+          "name": "NekuNeko SAMD Boards",
+          "architecture": "samd",
+          "version": "1.2.1",
+          "category": "NeKuNeKo",
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.2.1.tar.bz2",
+          "archiveFileName": "nekuneko-samd-1.2.1.tar.bz2",
+          "checksum": "SHA-256:d4698a5aca9414e74e4013369cdf4d8b864ab125bd749cd7a1e936d2a603ff3b",
+          "size": "10537803",
+          "help": {
+            "online": "https://github.com/nekuneko/NekuNeko_Arduino_Boards'"
+          },
+          "boards": [
+            {
+              "name": "SoK Zero (SAMD21J18A) [Deprecated]"
+            },
+            {
+              "name": "SoK Zero Dawn (SAMD21J18A)"
+            },
+            {
+              "name": "SoK Dark Dawn (SAMD51J20A)"
+            }
+          ],
+ 					"toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "4.8.3-2014q1"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.8.0-48-gb176eee"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.9.0-arduino"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS",
+              "version": "4.5.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.0"
+            }
+          ]
         }
-      ],
-      "name": "nekuneko",
-      "websiteURL": "https://github.com/nekuneko",
-      "help": {
-        "online": "https://github.com/nekuneko/arduino-board-index"
-      }
+      ]
     }
   ]
 }
