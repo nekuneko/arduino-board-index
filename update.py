@@ -170,6 +170,12 @@ def main ():
 	version = incrementVersion(lastVersion, str_release)
 	print("La nueva versión será: " + str(version))
 
+	str_yn = input("¿Has añadido la nueva versión al fichero NekuNeko_Arduino_Boards/platform.txt? y/n")
+	if (str_yn.lower() not in ['y', 's', 'yes', 'si']):
+		print("Pues venga, azlo y continúo, te espero.")
+		input()
+	
+
 	# Update version field in platform.txt file, static
 	lines = open('../NekuNeko_Arduino_Boards/platform.txt').read().splitlines()
 	lines[22] = 'version='+str(version)
@@ -219,7 +225,7 @@ def main ():
 	json_file.close()
 	print("JSON actualizado")
 
-
+	print("Repasa el fichero JSON y ya puedes subir los cambios a Github")
 	# Subir nuevos ficheros a git
 	#print("Subiendo ficheros a git...")
 	#try:
