@@ -126,60 +126,92 @@ def main ():
 	# url:				str 	= "https://"
 
 	str_release = 'release'
+	str_arch    = 'arch'
+	str_version = None
 
 	print(len(sys.argv))
 
 	# Comprobar argumentos:
 	if (len(sys.argv) > 1):
-		if (sys.argv[1] not in ["major", "minor", "release"]):
-			print("Primer argumento no válido, debe ser: major, minor, release. Para incrementar x.y.z respectivamente")
+		if (sys.argv[1] not in ["major", "minor", "release", "manual"]):
+			print("Primer argumento no válido, debe ser: major, minor, release. Para incrementar x.y.z respectivamente.")
 			exit(1)
 		else:
-			str_release = str(sys.argv[1])
+			if (sys.argv[1] in ["manual"]):
+				print("Introduzca revision en formato 1.6.5 (Major.Minor.Relase): ")
+				str_version = input()
+			else:
+				str_release = str(sys.argv[1])
+		if (sys.argv[2] not in ["samd", "nrf52"]):
+			print("Segundo argumento no válido, debe ser: samd o nrf52. Elija la plataforma adecuada.")
+			exit(1)
+		else:
+			str_arch = str(sys.argv[2])
 
 	print("Tipo de actualización: " + str_release)
+	print("Arquitectura: " + str_arch)
 	#input()
 
 	# Comprobar que exista el directorio ../NekuNeko_Arduino_Boards
-	if (not os.path.isdir('../NekuNeko_Arduino_Boards')):
-		print("Error. Su árbol de directorios debe ser así:")
-		print("GitHub/")
-		print("		arduino-board-index/")
-		print("		NekuNeko_Arduino_Boards/")
-		sys.exit(1)
-		
+	if (str_arch in ["samd"]):
+		if (not os.path.isdir('../NekuNeko_Arduino_Boards')):
+			print("Error. Su árbol de directorios debe ser así:")
+			print("GitHub/")
+			print("		arduino-board-index/")
+			print("		NekuNeko_Arduino_Boards/")
+			sys.exit(1)
+	
+		# Comprobar que exista el directorio ../NekuNeko_NRF52_Arduino
+	if (str_arch in ["nrf52"]):
+		if (not os.path.isdir('../NekuNeko_NRF52_Arduino')):
+			print("Error. Su árbol de directorios debe ser así:")
+			print("GitHub/")
+			print("		arduino-board-index/")
+			print("		NekuNeko_NRF52_Arduino/")
+			sys.exit(1)
 
 	# Cargar json en python
 	with open (nombrePackageJson, 'r+') as json_file:
 		dic_jsonArduino = json.load(json_file)
 	json_file.close()
 
-	# Obtener última versión de las deficiones de NekuNeko SAMD Boards
+	# Obtener última versión de las deficiones de NekuNeko SAMD Boards'
 	lastVersion  = "0.0.0"
 	lastPlatform = {}
-	for platform in dic_jsonArduino['packages'][0]['platforms']:
-		if (platform['name'] 			== 'NekuNeko SAMD Boards' and
-			platform['architecture'] 	== 'samd' and
-			platform['version'] 		>  lastVersion):
-				lastVersion  = deepcopy(platform['version'])
-				lastPlatform = deepcopy(platform)
+	if (str_arch in ["samd"]):
+		for platform in dic_jsonArduino['packages'][0]['platforms']:
+			if (platform['name'] 			== 'NekuNeko SAMD Boards' and
+				platform['architecture'] 	== 'samd' and
+				platform['version'] 		>  lastVersion):
+					lastVersion  = deepcopy(platform['version'])
+					lastPlatform = deepcopy(platform)
+	if (str_arch in ["nrf52"]):
+		for platform in dic_jsonArduino['packages'][0]['platforms']:
+			if (platform['name'] 			== 'NekuNeko NRF52 Boards' and
+				platform['architecture'] 	== 'nrf52' and
+				platform['version'] 		>  lastVersion):
+					lastVersion  = deepcopy(platform['version'])
+					lastPlatform = deepcopy(platform)
 
 
 
 	# Incrementar la versión según sea <major>, <minor> o <release>, 1.0.0 to 1.0.1
-	version = incrementVersion(lastVersion, str_release)
+	if (str_version is None):
+		version = incrementVersion(lastVersion, str_release)
+	else:
+		version = str_version
 	print("La nueva versión será: " + str(version))
 
-	str_yn = input("¿Has añadido la nueva versión al fichero NekuNeko_Arduino_Boards/platform.txt? y/n")
+	str_yn = input("¿Has añadido la nueva versión al fichero platform.txt? y/n")
 	if (str_yn.lower() not in ['y', 's', 'yes', 'si']):
 		print("Pues venga, azlo y continúo, te espero.")
 		input()
 	
 
 	# Update version field in platform.txt file, static
-	lines = open('../NekuNeko_Arduino_Boards/platform.txt').read().splitlines()
-	lines[22] = 'version='+str(version)
-	open('../NekuNeko_Arduino_Boards/platform.txt','w').write('\n'.join(lines))
+	#lines = open('../NekuNeko_Arduino_Boards/platform.txt').read().splitlines()
+	#lines[22] = 'version='+str(version)
+	#open('../NekuNeko_Arduino_Boards/platform.txt','w').write('\n'.join(lines))
 
 	# Determinar el nuevo nombre de archivo: nekuneko-samd - 1.2.0
 	nombrePlataformaVersion = nombrePlataforma + '-' + version
@@ -187,7 +219,10 @@ def main ():
 
 	# Comprimir el archivo de las placas
 	print("Comprimiendo boards....")
-	make_tarfile(nombrePlataformaVersion, '../NekuNeko_Arduino_Boards')
+	if (str_arch in ["samd"]):
+		make_tarfile(nombrePlataformaVersion, '../NekuNeko_Arduino_Boards')
+	if (str_arch in ["nrf52"]):
+		make_tarfile(nombrePlataformaVersion, '../NekuNeko_NRF52_Arduino')
 	print('Hecho')
 
 	# Calcular hash sha256 del archivo
@@ -206,14 +241,17 @@ def main ():
 	size = statinfo.st_size
 
 	# Mover archivo a directorio 'boards/'
-	os.rename(archiveFileName, 'boards/'+archiveFileName)
+	if (str_arch in ["samd"]):
+		os.rename(archiveFileName, 'boards/samd/'+archiveFileName)
+	if (str_arch in ["nrf52"]):
+		os.rename(archiveFileName, 'boards/nrf52/'+archiveFileName)
 
 	# Nuevo platform con campos actualizados
-	lastPlatform['version'] 		= str(version)
+	lastPlatform['version'] 		    = str(version)
 	lastPlatform['archiveFileName'] = str(archiveFileName)
-	lastPlatform['checksum'] 		= str('SHA-256:' + checksum)
-	lastPlatform['size'] 			= str(size)
-	lastPlatform['url']	  	= str(githubBaseURL + 'boards/' + archiveFileName)
+	lastPlatform['checksum'] 		    = str('SHA-256:' + checksum)
+	lastPlatform['size'] 			      = str(size)
+	lastPlatform['url']	  	        = str(githubBaseURL + 'boards/' + archiveFileName)
 
 	# Añadir plataforma a fichero json
 	dic_jsonArduino['packages'][0]['platforms'].append(lastPlatform) 
