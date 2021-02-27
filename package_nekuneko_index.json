@@ -841,12 +841,12 @@
         {
           "name": "NeKuNeKo SAMD Boards",
           "architecture": "samd",
-          "version": "1.6.5",
+          "version": "1.6.4",
           "category": "NeKuNeKo",
-          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.6.5.tar.bz2",
-          "archiveFileName": "nekuneko-samd-1.6.5.tar.bz2",
-          "checksum": "SHA-256:5a4dc314ac9c27f29c0b36352d06e2e80e6da199b5519c4289a80fc9a97a3c87",
-          "size": "1719996",
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.6.4.tar.bz2",
+          "archiveFileName": "nekuneko-samd-1.6.4.tar.bz2",
+          "checksum": "SHA-256:922af76645516160d5c7d63c7a872840fcace66d70ba03919664de42b14f26bc",
+          "size": "1724780",
           "help": {
             "online": "https://github.com/nekuneko/NeKuNeKo_SAMD_Arduino/issues"
           },

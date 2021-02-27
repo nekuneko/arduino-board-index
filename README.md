@@ -26,9 +26,9 @@ Optionally install python findimports module to check if there are missing depen
 
 You can check missing import dependencies by:
 
-`findimports bpt.py`
+`findimports bpt.py btp_modules.py`
 
-Next check for updates by issuing this command.
+Install the missing dependencies if so and next check for updates by issuing this command.
 
 `python3 bpt.py check-updates`
 
@@ -36,7 +36,7 @@ Finally perfom the update by issuing one of these commands.
 
 ```
 python3 bpt.py update-index "NeKuNeKo SAMD Boards"
-python3 bpt.py update-index "NeKuNeKo SAMD Boards"
+python3 bpt.py update-index "NeKuNeKo nRF52 Boards"
 ```
 
 Commit the changes and you are done.
