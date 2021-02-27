@@ -797,14 +797,56 @@
           ]
         },
         {
+          "name": "NeKuNeKo nRF52 Boards",
+          "architecture": "nrf52",
+          "version": "0.21.0",
+          "category": "NeKuNeKo",
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-nrf52-0.21.0.tar.bz2",
+          "archiveFileName": "nekuneko-nrf52-0.21.0.tar.bz2",
+          "checksum": "SHA-256:dfade2404ba951c16693dfa2b4764a26f6c21444d91bd0185fa21179e7a09675",
+          "size": "18173707",
+          "help": {
+            "online": "https://github.com/nekuneko/NeKuNeKo_nRF52_Arduino/issues"
+          },
+          "boards": [
+            {
+              "name": "MINEW MS50SFA2 (nRF52832 Mini)"
+            },
+            {
+              "name": "MINEW MS50SFB2 (nRF52832)"
+            },
+            {
+              "name": "MINEW MS88SF3 (nRF52840)"
+            },
+            {
+              "name": "Ebyte E73-2G4M08S1C (nRF52840)"
+            },
+            {
+              "name": "Kitten Syringe nRF52833"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "nekuneko",
+              "name": "arm-none-eabi-gcc",
+              "version": "9-2019q4"
+            },
+            {
+              "packager": "nekuneko",
+              "name": "nrfjprog",
+              "version": "9.4.0"
+            }
+          ]
+        },
+        {
           "name": "NeKuNeKo SAMD Boards",
           "architecture": "samd",
           "version": "1.6.5",
           "category": "NeKuNeKo",
           "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.6.5.tar.bz2",
           "archiveFileName": "nekuneko-samd-1.6.5.tar.bz2",
-          "checksum": "SHA-256:bdc488184c6bd14025760a0780021e6ab7d1c4a1cb4c477d9db1342505425478",
-          "size": "1719966",
+          "checksum": "SHA-256:5a4dc314ac9c27f29c0b36352d06e2e80e6da199b5519c4289a80fc9a97a3c87",
+          "size": "1719996",
           "help": {
             "online": "https://github.com/nekuneko/NeKuNeKo_SAMD_Arduino/issues"
           },
@@ -857,48 +899,6 @@
               "packager": "arduino",
               "name": "arduinoOTA",
               "version": "1.2.1"
-            }
-          ]
-        },
-        {
-          "name": "NeKuNeKo nRF52 Boards",
-          "architecture": "nrf52",
-          "version": "0.21.0",
-          "category": "NeKuNeKo",
-          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-nrf52-0.21.0.tar.bz2",
-          "archiveFileName": "nekuneko-nrf52-0.21.0.tar.bz2",
-          "checksum": "SHA-256:aa0882be617f27c98e53f2d2597dc75a869dc60a171ef0af9e0f7a2f709b7ec7",
-          "size": "17843828",
-          "help": {
-            "online": "https://github.com/nekuneko/NeKuNeKo_nRF52_Arduino/issues"
-          },
-          "boards": [
-            {
-              "name": "MINEW MS50SFA2 (nRF52832 Mini)"
-            },
-            {
-              "name": "MINEW MS50SFB2 (nRF52832)"
-            },
-            {
-              "name": "MINEW MS88SF3 (nRF52840)"
-            },
-            {
-              "name": "Ebyte E73-2G4M08S1C (nRF52840)"
-            },
-            {
-              "name": "Kitten Syringe nRF52833"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "nekuneko",
-              "name": "arm-none-eabi-gcc",
-              "version": "9-2019q4"
-            },
-            {
-              "packager": "nekuneko",
-              "name": "nrfjprog",
-              "version": "9.4.0"
             }
           ]
         }
