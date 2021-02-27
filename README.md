@@ -1,8 +1,9 @@
 # NekuNeko Package Lists for the Arduino v1.6.4+ Board Manager [![Build Status](https://travis-ci.org/adafruit/arduino-board-index.svg?branch=gh-pages)](https://travis-ci.org/adafruit/arduino-board-index)
 
-This repo contains the custom `package_nekuneko_index.json` files that can be used to add new
-third party boards to the Arduino v1.6.4+ IDE.
+This repo contains the custom `package_nekuneko_index.json` file that can be used to add new
+third party boards to the Arduino v1.6.4+ IDE. Please copy this line and add it to your Arduino IDE preferences box:
 
+`https://nekuneko.github.io/arduino-board-index/package_nekuneko_index.json`
 
 
 ## List of 3rd Party Boards
@@ -40,9 +41,11 @@ python3 bpt.py update-index "NeKuNeKo SAMD Boards"
 Commit the changes and you are done.
 
 
-It could be necessary to add manually the propper submodules on the repo's root.
+It could be necessary to add manually the propper submodules on the repo's root. In example:
 
 ```
 git submodule add https://github.com/adafruit/Adafruit_nRFCrypto.git libraries/Adafruit_nRFCrypto
 git submodule add https://github.com/adafruit/Adafruit_TinyUSB_ArduinoCore.git cores/nRF5/TinyUSB/Adafruit_TinyUSB_ArduinoCore
 ```
+
+Thanks to Adafruit, Ha Thatch, Tony DiCola and so many other maintainers to make this possible.
