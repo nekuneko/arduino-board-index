@@ -13,6 +13,7 @@ https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-supp
 
 ## Updating instructions
 
+You can read an extended explanation [here](https://learn.adafruit.com/using-board-package-tool-to-update-adafruit-arduino-packages), this is just a resume.
 First install the following requirements:
 
 ```
