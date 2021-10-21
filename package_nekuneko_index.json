@@ -1,8 +1,63 @@
 {
   "packages": [
     {
-      "websiteURL": "https://github.com/nekuneko",
+      "websiteURL": "https://adafruit.com",
       "tools": [
+        {
+          "name": "CMSIS",
+          "version": "5.7.0",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            },
+            {
+              "host": "i686-pc-linux-gnu",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            },
+            {
+              "host": "arm-linux-gnueabihf",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            },
+            {
+              "host": "aarch64-linux-gnu",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            },
+            {
+              "host": "all",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/ARM.CMSIS.5.7.0.zip",
+              "archiveFileName": "ARM.CMSIS.5.7.0.zip",
+              "checksum": "SHA-256:2518a8b66439b0814f27ddda1d38b890d0f601a25778378a6117e7dd393afc44",
+              "size": "117164633"
+            }
+          ]
+        },
         {
           "name": "CMSIS",
           "version": "5.4.0",
@@ -59,6 +114,116 @@
           ]
         },
         {
+          "name": "CMSIS-Atmel",
+          "version": "1.2.1",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            },
+            {
+              "host": "i686-pc-linux-gnu",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            },
+            {
+              "host": "arm-linux-gnueabihf",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            },
+            {
+              "host": "aarch64-linux-gnu",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            },
+            {
+              "host": "all",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.1/CMSIS-Atmel-1.2.1.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.1.tar.bz2",
+              "checksum": "SHA-256:2f2928bcf56569913be8deb9c1712e529b75b3efc27eed81d9dfb5cb5f53de28",
+              "size": "2510904"
+            }
+          ]
+        },
+        {
+          "name": "CMSIS-Atmel",
+          "version": "1.2.2",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            },
+            {
+              "host": "i686-pc-linux-gnu",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            },
+            {
+              "host": "arm-linux-gnueabihf",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            },
+            {
+              "host": "aarch64-linux-gnu",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            },
+            {
+              "host": "all",
+              "url": "https://github.com/adafruit/ArduinoModule-CMSIS-Atmel/releases/download/v1.2.2/CMSIS-Atmel-1.2.2.tar.bz2",
+              "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
+              "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
+              "size": "2511228"
+            }
+          ]
+        },
+        {
           "name": "arm-none-eabi-gcc",
           "version": "9-2019q4",
           "systems": [
@@ -71,7 +236,7 @@
             },
             {
               "host": "aarch64-linux-gnu",
-              "url": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2",
               "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2",
               "checksum": "MD5:0dfa059aae18fcf7d842e30c525076a4",
               "size": "128670769"
@@ -85,14 +250,14 @@
             },
             {
               "host": "x86_64-apple-darwin",
-              "url": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2",
               "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2",
               "checksum": "MD5:241b64f0578db2cf146034fc5bcee3d4",
               "size": "116770520"
             },
             {
               "host": "x86_64-pc-linux-gnu",
-              "url": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2",
+              "url": "https://github.com/adafruit/arduino-board-index/releases/download/build-tools/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2",
               "archiveFileName": "gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2",
               "checksum": "MD5:fe0029de4f4ec43cf7008944e34ff8cc",
               "size": "116802378"
@@ -894,6 +1059,70 @@
               "packager": "arduino",
               "name": "CMSIS-Atmel",
               "version": "1.2.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "arduinoOTA",
+              "version": "1.2.1"
+            }
+          ]
+        },
+        {
+          "name": "NeKuNeKo SAMD Boards",
+          "architecture": "samd",
+          "version": "1.7.0",
+          "category": "NeKuNeKo",
+          "url": "https://nekuneko.github.io/arduino-board-index/boards/nekuneko-samd-1.7.0.tar.bz2",
+          "archiveFileName": "nekuneko-samd-1.7.0.tar.bz2",
+          "checksum": "SHA-256:1b8e15bd9553f4dc783f90d1d103b54e557eedae56146bfce24f5891f77b60fa",
+          "size": "1807991",
+          "help": {
+            "online": "https://github.com/nekuneko/NeKuNeKo_SAMD_Arduino/issues"
+          },
+          "boards": [
+            {
+              "name": "Kitten Syringe (SAMD21E18A)"
+            },
+            {
+              "name": "Kitten Display (SAMD21E18A)"
+            },
+            {
+              "name": "SoK Zero Dawn (SAMD21J18A)"
+            },
+            {
+              "name": "SoK M4 Advance (SAMD51J20A)"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "nekuneko",
+              "name": "arm-none-eabi-gcc",
+              "version": "9-2019q4"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.7.0-arduino3"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.8.0-48-gb176eee"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.10.0-arduino7"
+            },
+            {
+              "packager": "nekuneko",
+              "name": "CMSIS",
+              "version": "5.4.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.2"
             },
             {
               "packager": "arduino",

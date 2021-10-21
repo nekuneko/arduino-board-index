@@ -17,7 +17,7 @@ You can read an extended explanation [here](https://learn.adafruit.com/using-boa
 First install the following requirements:
 
 ```
-sudo apt install python3 python3-pip
+sudo apt install python3 python3-pip python3-dev
 python3 -m pip install gitpython click configparser
 ```
 Optionally install python findimports module to check if there are missing dependencies:
@@ -26,7 +26,7 @@ Optionally install python findimports module to check if there are missing depen
 
 You can check missing import dependencies by:
 
-`findimports bpt.py btp_modules.py`
+`findimports bpt.py bpt_model.py`
 
 Install the missing dependencies if so and next check for updates by issuing this command.
 
@@ -42,11 +42,17 @@ python3 bpt.py update-index "NeKuNeKo nRF52 Boards"
 Commit the changes and you are done.
 
 
-It could be necessary to add manually the propper submodules on the repo's root. In example:
+It could be necessary to add manually the propper submodules on the repo's root. In example, for SAMD:
 
 ```
-git submodule add https://github.com/adafruit/Adafruit_nRFCrypto.git libraries/Adafruit_nRFCrypto
-git submodule add https://github.com/adafruit/Adafruit_TinyUSB_ArduinoCore.git cores/nRF5/TinyUSB/Adafruit_TinyUSB_ArduinoCore
+sudo git submodule add https://github.com/adafruit/Adafruit_ZeroDMA libraries/Adafruit_ZeroDMA
+sudo git submodule add https://github.com/adafruit/Adafruit_TinyUSB_Arduino libraries/Adafruit_TinyUSB_Arduino
 ```
 
+In example, for nRF52:
+
+```
+sudo git submodule add https://github.com/adafruit/Adafruit_nRFCrypto libraries/Adafruit_nRFCrypto
+sudo git submodule add https://github.com/adafruit/Adafruit_TinyUSB_Arduino libraries/Adafruit_TinyUSB_Arduino
+```
 Thanks to Adafruit, Ha Thatch, Tony DiCola and so many other maintainers to make this possible.
